@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * EntityFilm, Film SWAPI entity, describes a film's details
+ *
  * @author Duarte Silveira
  * @version 1
  * @since 11/05/17
@@ -86,57 +88,35 @@ public class EntityFilm {
 
 	public String getTitle() { return title;}
 
-//	public void setTitle(String title) { this.title = title;}
-
 	public int getEpisodeId() { return episodeId;}
-
-//	public void setEpisodeId(int episodeId) { this.episodeId = episodeId;}
 
 	public String getOpeningCrawl() { return openingCrawl;}
 
-//	public void setOpeningCrawl(String openingCrawl) { this.openingCrawl = openingCrawl;}
-
 	public String getDirector() { return director;}
-
-//	public void setDirector(String director) { this.director = director;}
 
 	public String getProducer() { return producer;}
 
-//	public void setProducer(String producer) { this.producer = producer;}
-
 	public String getDateRelease() { return dateRelease;}
-
-//	public void setDateRelease(String dateRelease) { this.dateRelease = dateRelease;}
 
 	public String getDateCreated() { return dateCreated;}
 
-//	public void setDateCreated(String dateCreated) { this.dateCreated = dateCreated;}
-
 	public String getDateEdited() { return dateEdited;}
-
-//	public void setDateEdited(String dateEdited) { this.dateEdited = dateEdited;}
 
 	public String getUrlDetails() { return urlDetails;}
 
-//	public void setUrlDetails(String urlDetails) { this.urlDetails = urlDetails;}
-
 	public List<String> getListCharacters() { return listCharacters;}
-
-//	public void setListCharacters(List<String> listCharacters) { this.listCharacters = listCharacters;}
 
 	public List<String> getListPlanets() { return listPlanets;}
 
-//	public void setListPlanets(List<String> listPlanets) { this.listPlanets = listPlanets;}
-
 	public List<String> getListStarships() { return listStarships;}
-
-//	public void setListStarships(List<String> listStarships) { this.listStarships = listStarships;}
 
 	public List<String> getListVehicles() { return listVehicles;}
 
-//	public void setListVehicles(List<String> listVehicles) { this.listVehicles = listVehicles;}
-
 	public List<String> getListSpecies() { return listSpecies;}
 
-//	public void setListSpecies(List<String> listSpecies) { this.listSpecies = listSpecies;}
+	@Override
+	public String toString() {
+		return "EntityFilm{" + "title='" + title + '\'' + ", episodeId=" + episodeId + ", openingCrawl='" + openingCrawl + '\'' + ", director='" + director + '\'' + ", producer='" + producer + '\'' + ", dateRelease='" + dateRelease + '\'' + ", dateCreated='" + dateCreated + '\'' + ", dateEdited='" + dateEdited + '\'' + ", urlDetails='" + urlDetails + '\'' + ", listCharacters=" + listCharacters + ", listPlanets=" + listPlanets + ", listStarships=" + listStarships + ", listVehicles=" + listVehicles + ", listSpecies=" + listSpecies + '}';
+	}
+
 }
