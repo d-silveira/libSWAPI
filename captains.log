@@ -1,0 +1,61 @@
+-Analyse swapi API
+ .colect base url					-	http://swapi.co/api/
+ .recognize object classes			-	[films, people, planets, species, starships, vehicles]
+ .recognize object listing syntax	-	$base_url/$object_class/
+	*list is always paged, paging syntax - ?page=$page_number
+		keep paging until next = "null"
+		pages = count_attribute / 10	(10 objects/page)
+ .recognize object get syntax		-	$base_url/$object_class/$object_id
+ .recognize search syntax			-	$base_url/$object_class/?search=$search_params
+ .recognize object classes parameters
+
+-Plan base rules
+ .Plan libs used
+	*retrofit2
+	*rxjava2
+	*dagger2?
+ .Plan patterns used
+	*Clean
+	*MVP
+	*Repository
+	*Observer
+ .Important running tasks
+	*Javadoc
+	*Unit testing
+	*Git atomic commits
+ .Use
+	*proguard
+ .Struture
+	*swapi objects as plugins
+ .Wrap-up
+	*document plugin creation in a markdown file
+	*push git repo to github
+
+
+v1 - KISS version
+ .Wrap the API with the simplest structure to develop and use.
+	*plugin_resources will have be a little less isolated than ideal, but doing so we can:
+		keep the server connections down to one, without the use of overly complicated solutions, relying on reflection to integrate all plugin_resources APIs into one interface.
+		unit tests from all plugin_resources are also separated to the java/test plugin_resources package
+	*despite these little drawbacks, the result is easy to extend and to use
+
+ .Steps
+	*Generate Entity classes from JSON
+	*create plugin_resources packages
+	*declare the API in an interface
+	*create a connectionManager to ease and center user interaction
+	*create unit tests
+
+v2 - full CLEAN version
+ .Complete the CLEAN layers, further abstracting the API
+	*domain objects will be created, to hide url data and unsupported entities, aswell as their' mappers
+	*presentation(CLEAN) presenter(MVP) will be created to return diggested domain objects after all relevant info has been retrieved
+		e.g. In the case of retrieving a person, the films the person enters will show up with the films names instead of their urls (it will use mapped(chained) requests)
+	*paging support will be added to allow the user to list all entities, instead of just the first 10
+	*plugins will add domain package where they'll define the abstracted entities, and the sub-package mapper, where they'll define sub-requests needed to complete the data, and all other relevant mapping actions
+
+V2.1 - Cached responses
+ .abstract the actual request to retrofit2 behind a factory pattern, to be able to cache responses and return cached  ones afterwards, thus optimizing bandwidth requirements, response speed, and availability
+ .decide on which mechanism should be used for storage
+ .implement cached objects deprecation after a certain age, but only delete them after a successful re-retrieve
+
