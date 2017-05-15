@@ -2,7 +2,7 @@
 
 ## Star Wars API web-service easy wrapper library for Android
 
-### It uses Retrofit2 + RxJava2, the Clean Design Pattern, KISS (Keep it Simple Stupid), and as best Android programming practices has possible.
+### It uses Retrofit2 + RxJava2, the Clean Design Pattern, KISS (Keep it Simple Stupid), and as best Android programming practices as possible.
 
 ---
 
