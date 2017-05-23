@@ -2,8 +2,8 @@ package pt.cleverti.libswapi.data.api;
 
 import io.reactivex.Observable;
 import pt.cleverti.libswapi.data.entity.EntitySwapi;
-import pt.cleverti.libswapi.data.entity.plugin_resources.film.EntityFilm;
-import pt.cleverti.libswapi.data.entity.plugin_resources.film.EntityListFilm;
+import pt.cleverti.libswapi.plugin_resources.film.data.entity.EntityFilm;
+import pt.cleverti.libswapi.plugin_resources.film.data.entity.EntityListFilm;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -32,6 +32,6 @@ public interface APISwapi {
 	Observable<EntityFilm> getEntityFilmById(@Path("id") int id);
 
 	@GET("api/films/")
-	Observable<EntityListFilm> getEntityFilmByTitle(@Query("search") String title);
+	Observable<EntityListFilm> searchEntityFilmByTitle(@Query("search") String title);
 
 }

@@ -36,8 +36,8 @@ public class UnitTestFilm {
 	}
 
 	@Test
-	public void testGetFilmByTitle() throws Exception {
-		Object objectReturn = connectionSwapi.getSwapiConnection().getEntityFilmByTitle("empire").blockingFirst();
+	public void testSearchFilmByTitle() throws Exception {
+		Object objectReturn = connectionSwapi.getSwapiConnection().searchEntityFilmByTitle("empire").blockingFirst();
 		System.out.println(objectReturn.toString());
 		Assert.assertNotNull(objectReturn);
 	}

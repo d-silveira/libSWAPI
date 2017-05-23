@@ -1,4 +1,4 @@
-package pt.cleverti.libswapi.data.entity.plugin_resources.film;
+package pt.cleverti.libswapi.plugin_resources.film.data.entity;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
